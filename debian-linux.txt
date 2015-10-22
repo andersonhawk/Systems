@@ -12,4 +12,19 @@
 	$ modprobe -r iwlwifi; modprobe iwlwifi
 
 # setup amd vide card #
-	$ aptitude install firmware-linux-free firmware-linux-nonfree	
+	$ aptitude install firmware-linux-free firmware-linux-nonfree
+
+
+## software config notes ##
+
+# setup flash plugin #
+	$ aptitude install flashplugin-nonfree flashplugin-nonfree-extrasound
+
+# setup chromium browser
+	$ aptitude install chromium chromium-l10n
+
+# chinese input #
+# setup following packages
+	$ aptitude install im-config fcitx pinyin google_pinyin
+# choose 'system -- preferences -- input method', choose fcitx input engine and logout.
+# login system and config fcitx and choose proper input method.
