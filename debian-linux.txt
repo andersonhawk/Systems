@@ -11,4 +11,5 @@
 	$ dpkg -i firmware-iwlwifi.xx
 	$ modprobe -r iwlwifi; modprobe iwlwifi
 
-
+# setup amd vide card #
+	$ aptitude install firmware-linux-free firmware-linux-nonfree	
