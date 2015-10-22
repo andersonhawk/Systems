@@ -4,7 +4,10 @@
 ## hardware config notes ##
 
 # setup intel-wifi firmware #
+	# add non-free module in /etc/apt/source.list
+	$ aptitude upgrade; aptitude update
 	$ aptitude search firmware-iwlwifi
+	$ apt-get download firmware-iwlwifi
 	$ dpkg -i firmware-iwlwifi.xx
 	$ modprobe -r iwlwifi; modprobe iwlwifi
 
