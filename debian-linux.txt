@@ -1,0 +1,11 @@
+
+### debian mate notes ###
+
+## hardware config notes ##
+
+# setup intel-wifi firmware #
+	$ aptitude search firmware-iwlwifi
+	$ dpkg -i firmware-iwlwifi.xx
+	$ modprobe -r iwlwifi; modprobe iwlwifi
+
+
