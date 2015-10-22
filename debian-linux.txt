@@ -28,3 +28,10 @@
 	$ aptitude install im-config fcitx pinyin google_pinyin
 # choose 'system -- preferences -- input method', choose fcitx input engine and logout.
 # login system and config fcitx and choose proper input method.
+
+# ebook tools #
+	$ aptitude install okular calibre
+
+# video, music tools #
+	$ aptitude install vlc mplayer2 smplayer
+	$ aptitude install audacious
