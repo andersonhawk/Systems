@@ -68,3 +68,13 @@ iface br1 inet dhcp
 # video, music tools #
 	$ aptitude install vlc mplayer2 smplayer
 	$ aptitude install audacious
+
+
+# wget mirror site #
+	$ wget -c -m -k -np -p -w 10 --random-wait -waitretry=5 http://pkg.pix.net
+		-c --continue
+		-m --mirror
+		-np --no-parent
+		-p --page-requisites
+		-w --wait
+		--random-wait --waitretry
