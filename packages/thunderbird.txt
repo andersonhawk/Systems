@@ -1,0 +1,18 @@
+-- debian thunderbird --
+put thunderbird.desktop in /usr/share/applications directory
+
+[Desktop Entry]
+Name=Thunderbird
+Comment=Read/Write Mails/News with Mozilla Thunderbird
+TryExec=/home/thomas/thunderbird/thunderbird
+Exec=/home/thomas/thunderbird/thunderbird
+Icon=/home/thomas/thunderbird/chrome/icons/default/default48.png
+Terminal=false
+Type=Application
+Version=1.0
+Categories=Network;X-Red-Hat-Base;
+Encoding=UTF-8
+
+[Desktop Action Full]
+Exec=/home/thomas/thunderbird/thunderbird
+
