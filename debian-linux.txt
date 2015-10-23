@@ -14,6 +14,39 @@
 # setup amd vide card #
 	$ aptitude install firmware-linux-free firmware-linux-nonfree
 
+# basic network config (/etc/network/interfaces)
+
+# bridge network member.
+allow-hotplug eth0
+iface eth0 inet manual
+	pre-up ifconfig $IFACE up
+	pre-down ifconfig $IFACE down
+
+allow-hotplug eth1
+iface eth1 inet manual
+	pre-up ifconfig $IFACE up
+	pre-down ifconfig $IFACE down
+
+allow-hotplug eth2
+iface eth1 inet manual
+	pre-up ifconfig $IFACE up
+	pre-down ifconfig $IFACE down
+
+# bridge network interface.
+auto br0
+iface br0 inet static
+	bridge_ports eth1 eth2
+	bridge_stp on
+	address 10.2.15.106
+	netmask 255.255.255.0
+	gateway 10.2.15.1
+	broadcast 10.2.15.255
+
+auto br1
+iface br1 inet dhcp
+	bridge_ports eth0
+	bridge_stp on
+
 
 ## software config notes ##
 
