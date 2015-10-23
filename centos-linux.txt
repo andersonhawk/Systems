@@ -1,0 +1,22 @@
+
+### centos gnome notes ###
+
+## install centos system ##
+
+# centos7 desktop link (http://www.dedoimedo.com/computers/centos-7-perfect-desktop.html)
+
+# dd install image to usb, and choose usb to boot/install.
+	$ dd if=CentOS-6.6-x86_64-minimal.iso of=/dev/sdb bs=1MB
+
+# copy full iso to local file system: CentOS-6.6-x86_64-bin-DVD1.iso,
+# modify repos config file: CentOS-Media.repo
+# install gui environment
+	$ yum grouplist | more
+	$ yum groupinstall "Desktop" "Desktop Platform" \ 
+		"Desktop Platform Development" "Fonts"  \
+		"Generial Purpose Desktop" "Graphical Administration Tools" \
+		"Graphics Creation Tools" "Input Methods" "X Window System" \
+		"Chinese Support [zh]"
+
+# check runlevel with command runlevel, modify /etc/inittab for 5 and reboot system.
+
