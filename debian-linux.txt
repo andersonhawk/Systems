@@ -78,3 +78,9 @@ iface br1 inet dhcp
 		-p --page-requisites
 		-w --wait
 		--random-wait --waitretry
+
+## block device management tools (util-linux) ##
+# dump block device
+	$ lsblk
+# dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
+	$ blkid
