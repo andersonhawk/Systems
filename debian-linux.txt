@@ -16,6 +16,9 @@
 
 # basic network config (/etc/network/interfaces)
 
+# modify /etc/hostname about hostname change.
+# modify /etc/network/interfaces about network device setting change.
+
 # bridge network member.
 allow-hotplug eth0
 iface eth0 inet manual
@@ -47,6 +50,16 @@ iface br1 inet dhcp
 	bridge_ports eth0
 	bridge_stp on
 
+
+# wireless network device
+auto wlan0
+iface wlan0 inet dhcp
+	WPA-SSID 804
+	WPA-PSK encryption-key
+
+# bring device down/up
+	$ ifdown wlan0
+	$ ifup wlan0
 
 ## software config notes ##
 
