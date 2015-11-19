@@ -84,3 +84,6 @@ iface br1 inet dhcp
 	$ lsblk
 # dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
 	$ blkid
+
+## modify system date ##
+	$ date MMddhhmmyyyy.ss
