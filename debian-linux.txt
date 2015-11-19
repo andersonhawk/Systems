@@ -50,6 +50,16 @@ iface br1 inet dhcp
 
 ## software config notes ##
 
+# apt-get software management #
+# search pkg with pattern
+	$ apt-cache search <reg>
+# update system index
+	$ apt-get update
+# update installed packages
+	$ apt-get upgrade
+# package repository configuration: /etc/apt/sources.list #
+# modify the configuration, and exec apt-get update get newest index.
+
 # setup flash plugin #
 	$ aptitude install flashplugin-nonfree flashplugin-nonfree-extrasound
 
