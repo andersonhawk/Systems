@@ -110,3 +110,10 @@ iface wlan0 inet dhcp
 
 ## modify system date ##
 	$ date MMddhhmmyyyy.ss
+
+## modify system timezone (cp /usr/share/zoneinfo/<timezone> /etc/localtime) ##
+	$ dpkg-reconfigure tzdate
+
+## save current system time to bios
+	$ hwclock -w
+	$ hwclock -r
