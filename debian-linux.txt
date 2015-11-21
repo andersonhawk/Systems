@@ -18,6 +18,7 @@
 
 # modify /etc/hostname about hostname change.
 # modify /etc/network/interfaces about network device setting change.
+# maybe modify /etc/resolv.conf about nameserver.
 
 # bridge network member.
 allow-hotplug eth0
@@ -61,11 +62,17 @@ iface wlan0 inet dhcp
 	$ ifdown wlan0
 	$ ifup wlan0
 
+# restart networking service 
+	$ systemctl restart networking.service
+
 ## software config notes ##
 
 # apt-get software management #
+	$ dpkg -i <package>
+	$ dpkg -r <package>
 # search pkg with pattern
 	$ apt-cache search <reg>
+	$ apt-cache show <package>
 # update system index
 	$ apt-get update
 # update installed packages
