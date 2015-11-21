@@ -3,6 +3,11 @@
 
 ## hardware config notes ##
 
+# dump system hardware information #
+	$ aptitude install lshw lshw-gtk
+	$ lshw -C network/storage/disk/multimedia/cpu/memory
+	$ lspci
+
 # setup intel-wifi firmware #
 	# add non-free module in /etc/apt/source.list
 	$ aptitude upgrade; aptitude update
