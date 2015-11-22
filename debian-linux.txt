@@ -21,9 +21,9 @@
 
 # basic network config (/etc/network/interfaces)
 
-# modify /etc/hostname about hostname change.
+# modify /etc/hostname and /etc/hosts about hostname change.
+# modify /etc/resolv.conf about nameserver.
 # modify /etc/network/interfaces about network device setting change.
-# maybe modify /etc/resolv.conf about nameserver.
 
 # bridge network member.
 allow-hotplug eth0
@@ -63,6 +63,10 @@ iface wlan0 inet dhcp
 	WPA-SSID 804
 	WPA-PSK encryption-key
 
+# dhcp release/renew ip address from dhcp server
+	$ dhclient -r eth0
+	$ dhclient eth0
+
 # bring device down/up
 	$ ifdown wlan0
 	$ ifup wlan0
@@ -72,7 +76,7 @@ iface wlan0 inet dhcp
 
 ## software config notes ##
 
-# apt-get software management #
+# software management #
 	$ dpkg -i <package>
 	$ dpkg -r <package>
 # search pkg with pattern
@@ -82,6 +86,17 @@ iface wlan0 inet dhcp
 	$ apt-get update
 # update installed packages
 	$ apt-get upgrade
+
+# remove package
+	$ apt-get --purge autoremove <package>
+
+# automatically fix dependency issue
+	$ dpkg --configure -a
+	$ apt-get install -f
+
+# clean store archive: /var/cache/apt/archives
+	$ apt-get clean | autoclean
+
 # package repository configuration: /etc/apt/sources.list #
 # modify the configuration, and exec apt-get update get newest index.
 
