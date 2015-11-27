@@ -3,6 +3,11 @@
 
 ## hardware config notes ##
 
+# dump system hardware information #
+	$ aptitude install lshw lshw-gtk
+	$ lshw -C network/storage/disk/multimedia/cpu/memory
+	$ lspci
+
 # setup intel-wifi firmware #
 	# add non-free module in /etc/apt/source.list
 	$ aptitude upgrade; aptitude update
@@ -16,7 +21,8 @@
 
 # basic network config (/etc/network/interfaces)
 
-# modify /etc/hostname about hostname change.
+# modify /etc/hostname and /etc/hosts about hostname change.
+# modify /etc/resolv.conf about nameserver.
 # modify /etc/network/interfaces about network device setting change.
 
 # bridge network member.
@@ -57,19 +63,40 @@ iface wlan0 inet dhcp
 	WPA-SSID 804
 	WPA-PSK encryption-key
 
+# dhcp release/renew ip address from dhcp server
+	$ dhclient -r eth0
+	$ dhclient eth0
+
 # bring device down/up
 	$ ifdown wlan0
 	$ ifup wlan0
 
+# restart networking service 
+	$ systemctl restart networking.service
+
 ## software config notes ##
 
-# apt-get software management #
+# software management #
+	$ dpkg -i <package>
+	$ dpkg -r <package>
 # search pkg with pattern
 	$ apt-cache search <reg>
+	$ apt-cache show <package>
 # update system index
 	$ apt-get update
 # update installed packages
 	$ apt-get upgrade
+
+# remove package
+	$ apt-get --purge autoremove <package>
+
+# automatically fix dependency issue
+	$ dpkg --configure -a
+	$ apt-get install -f
+
+# clean store archive: /var/cache/apt/archives
+	$ apt-get clean | autoclean
+
 # package repository configuration: /etc/apt/sources.list #
 # modify the configuration, and exec apt-get update get newest index.
 
