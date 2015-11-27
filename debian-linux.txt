@@ -102,6 +102,10 @@ iface wlan0 inet dhcp
 		-w --wait
 		--random-wait --waitretry
 
+# generate simple iso image #
+	$ aptitude install genisoimage
+	$ genisoimage -o cd1.iso -R -J -hfs dir
+
 ## block device management tools (util-linux) ##
 # dump block device
 	$ lsblk
