@@ -1,6 +1,8 @@
 
 ### debian mate notes ###
 
+## debian live system default user/pass: user/live ##
+
 ## hardware config notes ##
 
 # dump system hardware information #
