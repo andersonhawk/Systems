@@ -20,3 +20,41 @@
 
 # check runlevel with command runlevel, modify /etc/inittab for 5 and reboot system.
 
+## add a bridge in system ##
+	$ yum install bridge-utils tunctl
+	$ service NetworkManager stop
+	$ pushd /etc/sysconfig/network-scripts
+	$ cp ifcfg-eth1 ifcfg-br1
+
+# edit ifcfg-eth1 #
+DEVICE=eth1
+HWADDR=00:25:90:AA:93:63
+TYPE=Ethernet
+BOOTPROTO=none
+#IPV6INIT="yes"
+#IPV6_AUTOCONF="yes"
+NM_CONTROLLED=yes
+ONBOOT=yes
+UUID=5c96f45d-7edf-4679-8eca-43ba63a3c8ac
+NAME="System eth1"
+BRIDGE=br1
+
+# edit ifcfg-br1 #
+DEVICE=br1
+NM_CONTROLLED=yes
+ONBOOT=yes
+TYPE=Bridge
+STP=on
+BOOTPROTO=none
+IPADDR=10.3.15.30
+NETMASK=255.255.255.0
+PREFIX=24
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+#DEFROUTE=yes
+#IPV4_FAILURE_FATAL=yes
+#IPV6INIT=no
+#GATEWAY=192.168.0.1
+NAME="System br1"
+
+## restart network, NetworkManager services ##
