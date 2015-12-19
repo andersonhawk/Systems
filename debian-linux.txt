@@ -1,5 +1,6 @@
 
 ### debian mate notes ###
+	$ lsb_release -d
 
 ## debian live system default user/pass: user/live ##
 
@@ -82,6 +83,7 @@ iface wlan0 inet dhcp
 	$ dpkg -i <package>
 	$ dpkg -r <package>
 # search pkg with pattern
+	$ aptitude search "?name(^bind)"
 	$ apt-cache search <reg>
 	$ apt-cache show <package>
 # update system index
