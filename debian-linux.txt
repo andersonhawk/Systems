@@ -149,6 +149,14 @@ iface wlan0 inet dhcp
 ## modify system timezone (cp /usr/share/zoneinfo/<timezone> /etc/localtime) ##
 	$ dpkg-reconfigure tzdate
 
-## save current system time to bios
+## save current system time to bios ##
 	$ hwclock -w
 	$ hwclock -r
+
+## set editor pluma chinese encoding issue ##
+	$ aptitude install dconf-tools
+# add org.mate.pluma auto-detected-encodings about chinese encoding 'GB18030' 'GB2312' #
+# use command list gsettings to add chinese encoding #
+	$ gsettings list-keys org.mate.pluma |grep auto
+	$ gsettings get org.mate.pluma auto-detected-encodings
+	$ gsettings set org.mate.pluma auto-detected-encodings "['UTF-8', 'GB18030', 'GB2312']"
