@@ -106,6 +106,9 @@ iface wlan0 inet dhcp
 
 # setup flash plugin #
 	$ aptitude install flashplugin-nonfree flashplugin-nonfree-extrasound
+# update flash plugin (download *flashplayer*.tar.gz from adobe site) #
+	$ cp libflashplayer.so /usr/lib/flashplugin-nonfree
+# restart browser #
 
 # setup chromium browser
 	$ aptitude install chromium chromium-l10n
