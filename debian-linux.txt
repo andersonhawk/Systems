@@ -143,6 +143,9 @@ iface wlan0 inet dhcp
 # dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
 	$ blkid
 
+## harddisk status ##
+	$ aptitude install gsmartcontrol
+
 ## modify system date ##
 	$ date MMddhhmmyyyy.ss
 
