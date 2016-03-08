@@ -11,6 +11,11 @@
 	$ lshw -C network/storage/disk/multimedia/cpu/memory
 	$ lspci
 
+# config two monitor #
+	$ xrandr
+	$ xrandr --output VGA1 --left-of LVDS1
+	$ xrandr --output VGA1 --right-of LVDS1
+
 # setup intel-wifi firmware #
 	# add non-free module in /etc/apt/source.list
 	$ aptitude upgrade; aptitude update
