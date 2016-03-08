@@ -11,6 +11,12 @@
 	$ lshw -C network/storage/disk/multimedia/cpu/memory
 	$ lspci
 
+# block device management tools (util-linux) #
+# dump block device
+	$ lsblk
+# dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
+	$ blkid
+
 # config two monitor #
 	$ xrandr
 	$ xrandr --output VGA1 --left-of LVDS1
@@ -144,12 +150,6 @@ iface wlan0 inet dhcp
 # generate simple iso image #
 	$ aptitude install genisoimage
 	$ genisoimage -o cd1.iso -R -J -hfs dir
-
-## block device management tools (util-linux) ##
-# dump block device
-	$ lsblk
-# dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
-	$ blkid
 
 ## modify system date ##
 	$ date MMddhhmmyyyy.ss
