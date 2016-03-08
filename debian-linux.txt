@@ -151,6 +151,20 @@ iface wlan0 inet dhcp
 	$ aptitude install genisoimage
 	$ genisoimage -o cd1.iso -R -J -hfs dir
 
+	$ cat /dev/cdrom > cd1.iso
+	$ dd if=/dev/cdrom of=cd1.iso
+
+# loop device management #
+	$ dd if=/dev/zero of=loop.img bs=512M count=1
+# parted loop image file (create gpt/msdos, partition) #
+	$ parted loop.img
+# mapped loop image to device (map to /dev/mapper/loop0p[1,2]) #
+	$ kpartx -av loop.img
+# create file system on loop.img partition #
+	$ mkfs.ext4 /dev/mapper/loop0p1
+# unmapped loop image
+	$ kpartx -d loop.img
+
 ## modify system date ##
 	$ date MMddhhmmyyyy.ss
 
