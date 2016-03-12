@@ -11,6 +11,17 @@
 	$ lshw -C network/storage/disk/multimedia/cpu/memory
 	$ lspci
 
+# block device management tools (util-linux) #
+# dump block device
+	$ lsblk
+# dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
+	$ blkid
+
+# config two monitor #
+	$ xrandr
+	$ xrandr --output VGA1 --left-of LVDS1
+	$ xrandr --output VGA1 --right-of LVDS1
+
 # setup intel-wifi firmware #
 	# add non-free module in /etc/apt/source.list
 	$ aptitude upgrade; aptitude update
@@ -106,6 +117,9 @@ iface wlan0 inet dhcp
 
 # setup flash plugin #
 	$ aptitude install flashplugin-nonfree flashplugin-nonfree-extrasound
+# update flash plugin (download *flashplayer*.tar.gz from adobe site) #
+	$ cp libflashplayer.so /usr/lib/flashplugin-nonfree
+# restart browser #
 
 # setup chromium browser
 	$ aptitude install chromium chromium-l10n
@@ -137,11 +151,19 @@ iface wlan0 inet dhcp
 	$ aptitude install genisoimage
 	$ genisoimage -o cd1.iso -R -J -hfs dir
 
-## block device management tools (util-linux) ##
-# dump block device
-	$ lsblk
-# dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
-	$ blkid
+	$ cat /dev/cdrom > cd1.iso
+	$ dd if=/dev/cdrom of=cd1.iso
+
+# loop device management #
+	$ dd if=/dev/zero of=loop.img bs=512M count=1
+# parted loop image file (create gpt/msdos, partition) #
+	$ parted loop.img
+# mapped loop image to device (map to /dev/mapper/loop0p[1,2]) #
+	$ kpartx -av loop.img
+# create file system on loop.img partition #
+	$ mkfs.ext4 /dev/mapper/loop0p1
+# unmapped loop image
+	$ kpartx -d loop.img
 
 ## harddisk status ##
 	$ aptitude install gsmartcontrol
