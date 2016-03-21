@@ -93,6 +93,11 @@ iface wlan0 inet dhcp
 # software management #
 	$ dpkg -i <package>
 	$ dpkg -r <package>
+
+# dump pkg detail content #
+	$ dpkg -L <package>
+	$ apt-file list <package>
+
 # search pkg with pattern
 	$ aptitude search "?name(^bind)"
 	$ apt-cache search <reg>
