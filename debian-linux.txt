@@ -190,3 +190,7 @@ iface wlan0 inet dhcp
 	$ gsettings list-keys org.mate.pluma |grep auto
 	$ gsettings get org.mate.pluma auto-detected-encodings
 	$ gsettings set org.mate.pluma auto-detected-encodings "['UTF-8', 'GB18030', 'GB2312']"
+
+## texlive system ##
+	$ aptitude install texlive-full
+	$ aptitude install texmaker texstudio
