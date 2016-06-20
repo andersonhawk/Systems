@@ -194,3 +194,8 @@ iface wlan0 inet dhcp
 ## texlive system ##
 	$ aptitude install texlive-full
 	$ aptitude install texmaker texstudio
+
+## gcc/g++ document ##
+	$ add contrib/nonfree in sourcelists
+	$ aptitude update
+	$ aptitude install gcc-doc
