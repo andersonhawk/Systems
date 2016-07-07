@@ -12,7 +12,7 @@ aptitude install -y build-essential
 aptitude install -y gdb gdb-doc gcc-doc
 
 # linux headers/tools
-aptitude install -y linux-headers-amd64 linux-tools
+aptitude install -y linux-headers-amd64 linux-tools linux-source
 
 # linux doc/manual
 aptitude install -y linux-doc linux-manual linuxdoc-tools
