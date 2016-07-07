@@ -9,13 +9,16 @@ aptitude update
 
 # build-essential
 aptitude install -y build-essential
-aptitude install -y gdb gdb-doc
+aptitude install -y gdb gdb-doc gcc-doc
 
 # linux headers/tools
 aptitude install -y linux-headers-amd64 linux-tools
 
 # linux doc/manual
 aptitude install -y linux-doc linux-manual linuxdoc-tools
+
+# firmware
+aptitude install -y firmware-linux-free firmware-linux-nonfree firmware-iwlwifi
 
 # apt tools
 aptitude install -y apt-doc apt-file
@@ -24,7 +27,7 @@ aptitude install -y apt-doc apt-file
 aptitude install -y git-all mercurial mercurial-git hgsubversion subversion subversion-tools
 
 # system tools
-aptitude install -y sysstat sdparm hdparm smartmontools
+aptitude install -y sysstat sdparm hdparm smartmontools lshw
 
 # vim
 aptitude install -y vim vim-addon-manager vim-doc vim-python vim-youcompleteme
@@ -35,11 +38,15 @@ aptitude install -y cscope ctags tmux
 # vnc, rdesktop
 aptitude install -y tightvncserver xtightvncviewer rdesktop
 
-# browser, ebook, misc
+# browser, flash-plugin, ebook, misc
 aptitude install -y chromium chromium-l10n okular calibre
+aptitude install -y flashplugin-nonfree flashplugin-nonfree-extrasound
 
 # chinese input
 aptitude install -y fcitx fcitx-libpinyin fcitx-table-all fcitx-googlepinyin fcitx-sunpinyin
 
 # media player
-aptitude install -y vlc smplayer smplayer-l10n smplayer-themes
+aptitude install -y vlc smplayer smplayer-l10n smplayer-themes audacious
+
+# tex system
+aptitude install texlive-full texmaker texstudio

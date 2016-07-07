@@ -1,4 +1,3 @@
-
 ### debian mate notes ###
 	$ lsb_release -d
 
@@ -7,7 +6,6 @@
 ## hardware config notes ##
 
 # dump system hardware information #
-	$ aptitude install lshw lshw-gtk
 	$ lshw -C network/storage/disk/multimedia/cpu/memory
 	$ lspci
 
@@ -23,18 +21,11 @@
 	$ xrandr --output VGA1 --right-of LVDS1
 
 # setup intel-wifi firmware #
-	# add non-free module in /etc/apt/source.list
-	$ aptitude upgrade; aptitude update
-	$ aptitude search firmware-iwlwifi
 	$ apt-get download firmware-iwlwifi
 	$ dpkg -i firmware-iwlwifi.xx
 	$ modprobe -r iwlwifi; modprobe iwlwifi
 
-# setup amd vide card #
-	$ aptitude install firmware-linux-free firmware-linux-nonfree
-
 # basic network config (/etc/network/interfaces)
-
 # modify /etc/hostname and /etc/hosts about hostname change.
 # modify /etc/resolv.conf about nameserver.
 # modify /etc/network/interfaces about network device setting change.
@@ -69,7 +60,6 @@ auto br1
 iface br1 inet dhcp
 	bridge_ports eth0
 	bridge_stp on
-
 
 # wireless network device
 auto wlan0
@@ -120,28 +110,12 @@ iface wlan0 inet dhcp
 # package repository configuration: /etc/apt/sources.list #
 # modify the configuration, and exec apt-get update get newest index.
 
-# setup flash plugin #
-	$ aptitude install flashplugin-nonfree flashplugin-nonfree-extrasound
 # update flash plugin (download *flashplayer*.tar.gz from adobe site) #
 	$ cp libflashplayer.so /usr/lib/flashplugin-nonfree
-# restart browser #
-
-# setup chromium browser
-	$ aptitude install chromium chromium-l10n
 
 # chinese input #
-# setup following packages
-	$ aptitude install im-config fcitx pinyin google_pinyin
 # choose 'system -- preferences -- input method', choose fcitx input engine and logout.
 # login system and config fcitx and choose proper input method.
-
-# ebook tools #
-	$ aptitude install okular calibre
-
-# video, music tools #
-	$ aptitude install vlc mplayer2 smplayer
-	$ aptitude install audacious
-
 
 # wget mirror site #
 	$ wget -c -m -k -np -p -w 10 --random-wait -waitretry=5 http://pkg.pix.net
@@ -167,11 +141,13 @@ iface wlan0 inet dhcp
 	$ kpartx -av loop.img
 # create file system on loop.img partition #
 	$ mkfs.ext4 /dev/mapper/loop0p1
-# unmapped loop image
+# unmapped loop image #
 	$ kpartx -d loop.img
 
-## harddisk status ##
-	$ aptitude install gsmartcontrol
+# partition table dump #
+	$ sfdisk -d /dev/sda > sda_partition.out
+# edit sda_partition.out about part information, and reload #
+	$ sfdisk  /dev/sda < sda_partition.out
 
 ## modify system date ##
 	$ date MMddhhmmyyyy.ss
@@ -190,12 +166,3 @@ iface wlan0 inet dhcp
 	$ gsettings list-keys org.mate.pluma |grep auto
 	$ gsettings get org.mate.pluma auto-detected-encodings
 	$ gsettings set org.mate.pluma auto-detected-encodings "['UTF-8', 'GB18030', 'GB2312']"
-
-## texlive system ##
-	$ aptitude install texlive-full
-	$ aptitude install texmaker texstudio
-
-## gcc/g++ document ##
-	$ add contrib/nonfree in sourcelists
-	$ aptitude update
-	$ aptitude install gcc-doc
