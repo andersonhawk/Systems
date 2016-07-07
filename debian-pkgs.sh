@@ -32,6 +32,9 @@ aptitude install -y git-all mercurial mercurial-git hgsubversion subversion subv
 # system tools
 aptitude install -y sysstat sdparm hdparm smartmontools lshw
 
+# virtualization
+aptitude install -y qemu-kvm qemu-system-x86-64 virt-manager libvirt-doc
+
 # vim
 aptitude install -y vim vim-addon-manager vim-doc vim-python vim-youcompleteme
 
