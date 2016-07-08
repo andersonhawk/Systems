@@ -55,4 +55,7 @@ aptitude install -y fcitx fcitx-libpinyin fcitx-table-all fcitx-googlepinyin fci
 aptitude install -y vlc smplayer smplayer-l10n smplayer-themes audacious
 
 # tex system
-aptitude install texlive-full texmaker texstudio
+aptitude install -y texlive-full texmaker texstudio
+
+# boost
+aptitude install -y libboost-all-dev
