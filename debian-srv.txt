@@ -1,0 +1,21 @@
+## samba server config ##
+
+# add new configuration in /etc/samba/smb.conf
+
+[samba-doc]
+  comment = lenovo ssd doc/tools
+  path = /media/sda8/samba
+  browseable = yes
+  #read only = no
+  writable = yes
+  create mask = 0700
+  directory mask = 0700
+  public = no
+  force user = zhangzh31
+  #hosts allow =
+  #hosts deny =
+  #valid users = zhangzh31
+
+# $testparm to check smbd.conf, $man smbd.conf to add item in configuration
+# $smbpasswd add a samba user/passwd
+# $systemctl restart smbd.service
