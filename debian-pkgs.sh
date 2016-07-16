@@ -30,7 +30,7 @@ aptitude install -y apt-doc apt-file
 aptitude install -y git-all mercurial mercurial-git hgsubversion subversion subversion-tools
 
 # system tools
-aptitude install -y sysstat sdparm hdparm smartmontools lshw
+aptitude install -y sysstat sdparm hdparm smartmontools lshw fio
 
 # virtualization
 aptitude install -y qemu-kvm qemu-system-x86-64 virt-manager libvirt-doc
