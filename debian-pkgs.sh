@@ -14,8 +14,22 @@ aptitude install -y gdb gdb-doc gcc-doc
 # linux headers/tools
 aptitude install -y linux-headers-amd64 linux-tools
 
-# linux kernel source
+# https://www.debian.org/releases
+# linux kernel source: unstable, testing, stable repositories
+# edit /etc/apt/source.list
+#
+# stable repository
+# deb http://mirrors.aliyun.com/debian/ jessie main contrib non-free
+# deb-src http://mirrors.aliyun.com/debian/ jessie main contrib
+# unstable repository
+# deb http://mirrors.aliyun.com/debian/ unstable main contrib
+# deb-src http://mirrors.aliyun.com/debian/ unstable main contrib
+# testing repository
+# deb http://mirrors.aliyun.com/debian/ testing main contrib
+# deb-src http://mirrors.aliyun.com/debian/ testing main contrib
+
 aptitude install -y linux-source
+aptitude build-dep linux
 
 # linux doc/manual
 aptitude install -y linux-doc linux-manual linuxdoc-tools
