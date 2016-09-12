@@ -1,19 +1,5 @@
 #!/usr/bin/env bash
-
-# debian sources
-#deb http://mirrors.ustc.edu.cn/debian/ jessie main contrib non-free
-#deb-src http://mirrors.ustc.edu.cn/debian/ jessie main contrib
-
-# aptitude update package database
-aptitude update 
-
-# build-essential
-aptitude install -y build-essential
-aptitude install -y gdb gdb-doc gcc-doc
-
-# linux headers/tools
-aptitude install -y linux-headers-amd64 linux-tools
-
+#
 # https://www.debian.org/releases
 # linux kernel source: unstable, testing, stable repositories
 # edit /etc/apt/source.list
@@ -27,6 +13,17 @@ aptitude install -y linux-headers-amd64 linux-tools
 # testing repository
 # deb http://mirrors.aliyun.com/debian/ testing main contrib
 # deb-src http://mirrors.aliyun.com/debian/ testing main contrib
+#
+
+# aptitude update package database
+aptitude update 
+
+# build-essential
+aptitude install -y build-essential
+aptitude install -y gdb gdb-doc gcc-doc
+
+# linux headers/tools
+aptitude install -y linux-headers-amd64 linux-tools
 
 aptitude install -y linux-source
 aptitude build-dep linux
