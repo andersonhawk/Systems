@@ -3,3 +3,10 @@ https://softwareupdate.vmware.com/cds
 
 --- microsoft download ---
 http://msdn.itellyou.cn/
+
+
+
+== ebooks ==
+http://scjzzx.com
+http://bookdl.com
+http://www.foxebook.net
