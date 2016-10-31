@@ -13,7 +13,12 @@
 	# systemctl set-default graphical.target
 	# reboot
 
-## install centos system ##
+### centos ceph storage notes ###
+	# yum install centos-release-ceph-hammer.noarch
+
+## modify /etc/yum.repos.d/CentOS-Ceph-Hammer.repo with mirrors.aliyun.com. ##
+	# yum makecache
+	# yum install ceph ceph-deploy
 
 # centos7 desktop link (http://www.dedoimedo.com/computers/centos-7-perfect-desktop.html)
 
