@@ -1,6 +1,18 @@
 
 ### centos gnome notes ###
 
+### centos mate notes ###
+
+## install epel-release and X windows system repository ##
+	# yum install http://mirrors.aliyun.com/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+
+## modify /etc/yum.repos.d/epel.repo with mirrors.aliyun.com/epel mirror sites. ## 
+
+	# yum groupinstall "X Window system"
+	# yum groupinstall "MATE Desktop"
+	# systemctl set-default graphical.target
+	# reboot
+
 ## install centos system ##
 
 # centos7 desktop link (http://www.dedoimedo.com/computers/centos-7-perfect-desktop.html)
