@@ -1,0 +1,3 @@
+## unlock ubuntu root user account ##
+	1. create root user passwd with: sudo passwd root
+	2. modify ssh configuration allow root user remote log	
