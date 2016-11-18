@@ -1,0 +1,6 @@
+## http config ##
+
+# yum install httpd
+# systemctl status httpd
+# systemctl enable httpd
+# systemctl start httpd
