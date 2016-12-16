@@ -1,0 +1,10 @@
+### centos yum/rpm package management ###
+
+## dump file list of package ##
+# rpm query installed package file list #
+$ rpm -ql <package>
+$ rpm -qpl <package.rpm>
+
+# yum query not installed package file list #
+$ yum install yum-utils
+$ repoquery -l <package>
