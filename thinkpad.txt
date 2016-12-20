@@ -1,0 +1,11 @@
+### thinkpad linux configuration ###
+
+## thinkpad temperature monitor ##
+
+$modprobe thinkpad_acpi
+$aptitude install thinkfan
+
+
+## thinkpad adjust cpu frequency ##
+$cpufreq-info -o
+$cpufreq-set -c cpu_num -g performance | powersave
