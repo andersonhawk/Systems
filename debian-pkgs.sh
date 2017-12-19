@@ -56,7 +56,7 @@ aptitude install -y cscope ctags tmux
 aptitude install -y tightvncserver xtightvncviewer rdesktop
 
 # browser, flash-plugin, ebook, misc
-aptitude install -y chromium chromium-l10n okular calibre
+aptitude install -y chromium chromium-l10n okular calibre qpdfview-djvu-plugin
 aptitude install -y flashplugin-nonfree flashplugin-nonfree-extrasound
 
 # chinese input
