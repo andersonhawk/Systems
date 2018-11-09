@@ -95,6 +95,13 @@ iface wlan0 inet dhcp
 	$ aptitude search "?name(^bind)"
 	$ apt-cache search <reg>
 	$ apt-cache show <package>
+	$ apt-cache showpkg <package>
+
+	# example search g++
+	$ apt-cache search 'g\+\+'
+	$ apt-cache show g++-6
+	$ apt-cache showpkg g++-6
+
 # update system index
 	$ apt-get update
 # update installed packages
