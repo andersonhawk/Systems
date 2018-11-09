@@ -15,6 +15,9 @@
 # dump block device uuid in system (check /dev/disk/by-uuid, add entry in /etc/fstab)
 	$ blkid
 
+# detect two monitor failed (miss firmware-linux-nonfree pkgs)
+	$ aptitude install firmware-linux-nonfree
+
 # config two monitor #
 	$ xrandr
 	$ xrandr --output VGA1 --left-of LVDS1
