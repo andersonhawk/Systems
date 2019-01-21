@@ -1,0 +1,43 @@
+## linux kernel config about wireless
+
+Device Drivers -> Generic Driver Options -> "Userspace firmware loading support"
+Device Drivers -> Network device support -> Wireless LAN -> iwlwifi (etc)
+
+## 80211 modules loading
+Networking Support -> Wireless -> cfg80211/mac80211
+
+
+## modify /etc/sysconf/wpa_supplicant, add interface name
+INTERFACES="-iwlp6s0"
+
+## modify /etc/wpa_supplicant/wpa_supplicant.conf with sample
+network={
+        ssid="xxxx"
+        scan_ssid=1
+        key_mgmt=WPA-PSK
+        psk="xxxx"
+}
+
+## create /etc/sysconfig/network-scripts/ifcfg-<interface-name>
+
+TYPE="Wireless"
+WPA=yes
+BOOTPROTO=dhcp
+DEFROUTE=yes
+NAME=wlp6s0
+DEVICE=wlp6s0
+ONBOOT=yes
+
+## hardware info
+https://ark.intel.com/products/59481
+https://ark.intel.com/products/59474
+
+## firmware
+https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi#firmware
+git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+
+copy files to /lib/firmware
+
+## systemctl
+systemctl start wpa_supplicant
+systemctl start network
