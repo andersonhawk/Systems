@@ -1,0 +1,30 @@
+## resize ext4 partition
+
+1. check filesystem usage with: df -h, and partition capacity: lsblk
+2. umount the partition: umount /dev/sdc1
+3. calc filesystem block: resize2fs /dev/sdc1
+
+4. shrink the partition: resize2fs /dev/sdc1 20G
+
+5. modify the partition table
+   parted /dev/sdc; editor start/end of sdc1 partition
+
+6. calc filesystem block again: resize2fs /dev/sdc1
+7. mount the partition
+
+## modify ext4 partition uuid
+
+1. check uuid of system blocks
+$lsblk -f
+$blkid
+$ls -l /dev/disk/by-uuid
+$tune2fs -l /dev/sda1 | grep 'Filesystem UUID'
+
+2. generate new uuid for ext4 block partition
+$uuidgen | xargs tune2fs /dev/sda1 -U
+
+
+3. modify grub boot config /etc/default/grub with following option
+GRUB_DEVICE_UUID=<new uuid>
+
+4. cd /boot/grub2 && grub2-mkconfig -o grub.cfg and also modify another uuid option in the configuration
