@@ -1,0 +1,27 @@
+## namespace management
+
+1. check nvme device support maximum number of namespace.
+# nvme id-ctrl /dev/nvme0 | grep nn
+
+2. check namespace capacity allocation (total capacity and unallocated capacity).
+# nvme id-ctrl /dev/nvme0 | grep nvmcap
+
+3. delete all of unused namespace
+3.1 list nvme controller id in nvme device (0x21)
+# nvme list-ctrl /dev/nvme0
+
+3.2 delete possible detached namespace (1~32, till tnvmcap == unvmcap)
+# nvme delete-ns /dev/nvme0 -n x -c 0x21
+
+4. create namespace
+4.1 detach a namespace
+# nvme detach-ns /dev/nvme0 -n 1 -c 0x21
+# nvme delete-ns /dev/nvme0 -n 1
+4.2 check tnvmcap and unvmcap
+# nvme id-ctrl /dev/nvme0 | grep nvm
+4.3 create a namespace
+# nvme create-ns /dev/nvme0 -s <lbanum> -c <lbanum> -f <lbaformat> etc
+# nvme attach-ns /dev/nvme0 -n 1 -c 0x21
+# nvme reset /dev/nvme0
+
+# there are maximum lba number with lba_format define in vendor specification.
