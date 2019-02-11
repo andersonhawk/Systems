@@ -28,3 +28,15 @@ $uuidgen | xargs tune2fs /dev/sda1 -U
 GRUB_DEVICE_UUID=<new uuid>
 
 4. cd /boot/grub2 && grub2-mkconfig -o grub.cfg and also modify another uuid option in the configuration
+
+
+## clean up device filesystem type
+
+# mount /dev/sda3 /media/sda3
+mount: /dev/sda3: more filesystems detected. This should not happen,
+       use -t <type> to explicitly specify the filesystem type or
+       use wipefs(8) to clean up the device.
+
+# wipefs -a /dev/sda3
+# mount again the partition
+
