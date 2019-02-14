@@ -1,0 +1,16 @@
+1. f2fs support smr hdd notes
+
+###
+# zone          : 1 section
+# section       : 128 segment, 256MiB (the unit of garbage collection)
+# segment       : 512 block, 2MiB
+# block         : 8 sectors, 4KiB
+# sector        : 512Byte
+###
+
+# format smr driver with f2fs options
+mkfs.f2fs -d 1 -a 0 -t 0 -l wdc-15t -f -m -s 128 -w 4096 -z 1 /dev/sdc
+
+# mount smr driver with f2fs options
+mount -t f2fs -o noinline_data,noinline_dentry,noatime,flush_merge,no_heap /dev/sdc /media/smr15t
+
