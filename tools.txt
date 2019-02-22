@@ -1,0 +1,7 @@
+### unrar in linux
+
+# download unrar binary
+https://rarlab.com/download.htm
+
+# unrar with password (autodetect multi-archive files)
+unrar -p<password> x sample.rar
