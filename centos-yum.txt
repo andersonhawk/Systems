@@ -8,3 +8,14 @@ $ rpm -qpl <package.rpm>
 # yum query not installed package file list #
 $ yum install yum-utils
 $ repoquery -l <package>
+
+## centos with mate desktop
+# yum groupinstall "Development Tools"
+# yum groupinstall "Server with GUI"
+# yum groupinstall "MATE"
+
+## change system startup with 'graphical' target
+# systemctl set-default graphical.target
+## check system default display-manager service
+# ls -l /etc/systemd/system/display-manager.service (lightdm.service)
+## restart system and choose 'mate' desktop to login
