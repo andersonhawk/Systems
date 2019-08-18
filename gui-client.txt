@@ -1,0 +1,9 @@
+##
+vnc server
+	tigervnc-server
+
+vnc client
+	gvncviewer 192.168.31.64:1
+
+rdp client (windows default rdp server)
+	vinagre (Applications->Internet->Remote Desktop Viewer
