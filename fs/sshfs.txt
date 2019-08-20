@@ -1,0 +1,7 @@
+## sshfs usage:
+
+# mount
+sshfs root@192.168.31.64:/media ~/sshfs
+
+# umount
+fusermount -u ~/sshfs
