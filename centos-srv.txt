@@ -4,3 +4,17 @@
 # systemctl status httpd
 # systemctl enable httpd
 # systemctl start httpd
+
+## samba config ##
+# yum install samba samba-client samba-common
+# vim /etc/samba/smb.conf
+# systemctl enable smb.service
+# systemctl enable nmb.service
+# systemctl restart smb.service
+# systemctl restart nmb.service
+# systemctl stop firewall.service
+
+## modify <anonymous> samba dir
+# chcon -t samba_share_t anonymous/
+
+# smbpass -a <user>
