@@ -1,0 +1,13 @@
+## cifs
+## samba
+
+# install samba client
+# aptitude install cifs-utils
+
+# dump samba server ip share info
+# smbclient -L <ip> -U <user>
+
+# use cifs/mount option
+# mount -t cifs //<ip>/<share> <local> -o username=<user>
+
+# config samba server
