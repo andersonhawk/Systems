@@ -1,0 +1,12 @@
+## prepare f2fs tools dependencies (/usr/include/scsi/sg.h)
+# yum install glibc-headers
+
+## pick LTS kernel version, 4.19.xx
+
+## f2fs, f2fs-tools
+https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs.git
+https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-tools.git/
+
+## some comments about f2fs
+https://github.com/RiweiPan/F2FS-NOTES
+https://me.csdn.net/u011649400
