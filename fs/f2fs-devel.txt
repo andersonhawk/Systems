@@ -8,5 +8,6 @@ https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs.git
 https://git.kernel.org/pub/scm/linux/kernel/git/jaegeuk/f2fs-tools.git/
 
 ## some comments about f2fs
+https://www.phoronix.com/scan.php?page=search&q=F2FS
 https://github.com/RiweiPan/F2FS-NOTES
 https://me.csdn.net/u011649400
