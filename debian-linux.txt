@@ -176,3 +176,14 @@ iface wlan0 inet dhcp
 	$ gsettings list-keys org.mate.pluma |grep auto
 	$ gsettings get org.mate.pluma auto-detected-encodings
 	$ gsettings set org.mate.pluma auto-detected-encodings "['UTF-8', 'GB18030', 'GB2312']"
+
+
+## close terminal, vim remind voice
+
+# terminal, editor /etc/inputrc, comment out the LINE, and restart terminal
+	# set bell-style one
+
+# vim, editor ~/.vimrc, add following line in the configuration file
+	set vb t_vb=
+
+
