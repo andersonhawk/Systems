@@ -22,6 +22,9 @@ aptitude update
 aptitude install -y build-essential
 aptitude install -y gdb gdb-doc gcc-doc
 
+# manpages about posix
+aptitude install -y manpages-posix manpages-posix-dev
+
 # linux headers/tools
 aptitude install -y linux-headers-amd64 linux-tools
 
