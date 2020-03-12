@@ -72,4 +72,4 @@ aptitude install -y vlc smplayer smplayer-l10n smplayer-themes audacious
 aptitude install -y texlive-full texmaker texstudio
 
 # boost
-aptitude install -y libboost-all-dev
+#aptitude install -y libboost-all-dev
