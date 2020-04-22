@@ -12,6 +12,7 @@ make bcm2711_defconfig
 
 GPU : Broadcom VideoCore VI 500MHz
 ----------------------------------
+drivers/gpu/drm/vc4/
 drivers/staging/vc04_services
 
 InBox-Net (1GB eth0)
