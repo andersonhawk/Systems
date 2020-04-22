@@ -9,6 +9,11 @@ CPU: Quad-core 1.5GHz Arm Cortex-A72 based processor
 ----------------------------------------------------
 KERNEL=kernel7l
 make bcm2711_defconfig
+make -j4 zImage modules dtbs
+cp arch/arm/boot/dts/*.dtb /boot/
+cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/
+cp arch/arm/boot/dts/overlays/README /boot/overlays/
+cp arch/arm/boot/zImage /boot/kernel7l.img
 
 GPU : Broadcom VideoCore VI 500MHz
 ----------------------------------
