@@ -1,0 +1,35 @@
+
+## system with two network device (usb3-net)
+
+## install dhcpd service
+# apt-get install isc-dhcp-server
+
+## edit network configuration : /etc/network/interfaces
+
+auto enx503eaa20a5bd
+iface enx503eaa20a5bd inet static
+        address 192.168.3.1
+        netmask 255.255.255.0
+
+
+## edit dhcpd with interface: /etc/default/isc-dhcp-server
+
+INTERFACESv4="enx503eaa20a5bd"
+
+## edit dhcpd configuration: /etc/dhcp/dhcpd.conf
+
+subnet 192.168.3.0 netmask 255.255.255.0 {
+    # specify the default gateway address
+    option routers 192.168.3.1;
+    # specify the subnet-mask
+    option subnet-mask 255.255.255.0;
+    # specify the range of leased IP addresses
+    range 192.168.3.2 192.168.3.128;
+}
+
+## restart dhcpd service
+# systemctl restart isc-dhcp-server
+
+
+## check dhcpd release ip address for dhcp client
+# dhcp-lease-list
