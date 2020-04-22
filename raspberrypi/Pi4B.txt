@@ -1,0 +1,30 @@
+Hardware
+========
+
+RaspberryPi4B Hardware and Linux/Kernel
+https://www.raspberrypi.org/documentation/linux/kernel/building.md
+
+Soc: Broadcom BCM2711
+CPU: Quad-core 1.5GHz Arm Cortex-A72 based processor
+----------------------------------------------------
+KERNEL=kernel7l
+make bcm2711_defconfig
+
+GPU : Broadcom VideoCore VI 500MHz
+----------------------------------
+drivers/staging/vc04_services
+
+InBox-Net (1GB eth0)
+Broadcom GENET internal MAC support
+-----------------------------------
+drivers/net/ethernet/broadcom/bcmgenet.ko
+
+USB2-Net (100MB eth1)
+ASIX AX8817X based USB 2.0 Ethernet Devices
+-------------------------------------------
+drivers/net/usb/asix.ko
+
+Wireless (2.4G/5G wlan0)
+Broadcom 802.11 wireless LAN fullmac chipset
+--------------------------------------------
+drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko
