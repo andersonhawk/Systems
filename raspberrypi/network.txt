@@ -1,0 +1,92 @@
+## RaspberryPi4B Basic Networking Configuration ##
+
+# readme
+https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
+
+## Config raspberrypi 4B wireless AP mode (wlan0);
+## Bridge wlan0 and eth0 as bridge interface br0;
+## Config dhcp server on the br0 interface;
+## Config dhcp client on eth1 interface (outer interface);
+## Enable NAT between eth1 and br0;
+
+# hostapd config (remove installed dhcp server at first) #
+----------------------------------------------------------
+$ sudo aptitude install hostapd isc-dhcp-server
+
+# Edit /etc/hostapd/hostapd.conf with following content
+# Note bridge=br0 option for system bootup create bridge interface
+#      br0 with wlan0 and eth0
+
+interface=wlan0
+bridge=br0
+driver=nl80211
+ssid=XXX
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=XXX
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+
+# Edit /etc/default/hostapd
+
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+
+# Systemctl enable hostapd services
+# Note 'systemctl status hostapd' to check hostapd configuration and service status
+$ systemctl unmask hostapd
+$ systemctl enable hostapd
+$ systemctl start hostapd
+
+# Config network interface as following /etc/network/interfaces
+# Note : eth1 outer interface (dhcp client)
+#        br0 bridge interface with wlan0/eth0 with static config
+
+auto lo eth1 br0
+iface lo inet loopback
+
+iface eth1 inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+
+allow-hotplug eth0
+iface eth0 inet manual
+
+iface br0 inet static
+        bridge_ports wlan0 eth0
+        address 192.168.88.1
+        netmask 255.255.255.0
+
+# Config dhcp server on br0 bridge interface
+# Note 'br0' bridge interface provides dhcp services with
+#      'wlan0' wireless interface and 'eth0' wire interface.
+
+# Edit /etc/dhcp/dhcpd.conf
+
+option domain-name "Pi4AP";
+option domain-name-servers 8.8.8.8;
+authoritative;
+subnet 192.168.88.0 netmask 255.255.255.0 {
+   range 192.168.88.88 192.168.88.254;
+   option routers 192.168.88.1;
+   option domain-name-servers 8.8.8.8, 8.8.4.4;
+}
+
+# Edit /etc/default/isc-dhcp-server
+
+DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
+DHCPDv4_PID=/var/run/dhcpd.pid
+INTERFACESv4="br0"
+
+# Add NAT policy between eth1 and br0
+# Edit /root/ipt-novpn.sh
+
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+# Reboot RaspberryPi4B as Router-Dhcp-AP server
