@@ -1,0 +1,19 @@
+
+Raspberry Pi system information:
+
+https://www.raspberrypi.org/documentation/configuration/
+
+# Check raspberry pi model
+$ cat /sys/firmware/devicetree/base/model
+
+    Raspberry Pi 4 Model B Rev 1.2
+    Raspberry Pi 2 Model B Rev 1.1
+
+# Modify raspberry pi hostname
+$ vim /etc/hostname
+    RaspberryPi2B
+
+# Check raspberry pi cpu temperature
+
+    /opt/vc/bin/vcgencmd meature_temp
+    cat /sys/class/thermal/thermal_zone0/temp
