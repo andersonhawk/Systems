@@ -1,0 +1,74 @@
+
+## hardware info
+
+https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2835/README.md
+
+## add arm build depenency (maybe connect vpn)
+
+#dpkg --add-architecture armhf
+#apt-get update
+#apt-get install crossbuild-essential-armhf
+#apt-get install git bc bison flex libssl-dev make libc6-dev libncurses5-dev
+
+## sync raspberrypi linux kernel and tools from github (maybe connect vpn)
+
+#git clone https://github.com/raspberrypi/linux
+#git clone https://github.com/raspberrypi/tools
+
+## setup crosscompile toolchain path
+## https://www.raspberrypi.org/documentation/linux/kernel/building.md
+
+echo PATH=<maybe>/tools/arm-bcm2708/arm-linux-gnueabihf/bin:$PATH > ~.bashrc
+source ~/.bashrc
+
+## load raspberrypi kernel
+## raspberrypi4B: bcm2711_defconfig
+
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2711_defconfig
+
+## raspberrypi2B: bcm2709_defconfig
+
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
+
+## custom raspberrypi kernel
+
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+
+## build raspberrypi kernel/modules (pi4b kernel7l, pi2b kernel7)
+
+## raspberrypi4B: kernel7l
+
+# KERNEL=kernel7l make -j8 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs
+
+## raspberrypi2B: kernel7
+# KERNEL=kernel7 make -j8 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs
+
+## install kernel/modules
+## partition example ##
+
+root@RaspberryPi2B:/# lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+mmcblk0     179:0    0 14.9G  0 disk 
+├─mmcblk0p1 179:1    0  256M  0 part /boot
+└─mmcblk0p2 179:2    0 14.6G  0 part /
+
+## install modules in ext4 partition
+
+# mkdir ../ext4
+# make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=../ext4 modules_install
+
+## install kernel in fat32 partition
+
+# mkdir ../fat32
+# mkdir ../fat32/overlays
+# cp arch/arm/boot/zImage ../fat32/kernel7.img
+# cp arch/arm/boot/dts/*.dtb ../fat32
+# cp arch/arm/boot/dts/overlays/*.dtb* ../fat32/overlays/
+# cp arch/arm/boot/dts/overlays/README ../fat32/overlays
+
+## copy kernel/modules on raspberrypi platform
+
+# scp -r fat32/* 192.168.88.91:/boot
+# scp -r ext4/lib/modules/4.19.97-v7 192.168.88.91:/lib/modules/
+# reboot
+
