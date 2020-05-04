@@ -5,9 +5,13 @@ https://www.raspberrypi.org/documentation/configuration/
 
 # Check raspberry pi model
 $ cat /sys/firmware/devicetree/base/model
+$ cat /sys/firmware/devicetree/base/compatible
 
     Raspberry Pi 4 Model B Rev 1.2
+    raspberrypi,4-model-bbrcm,bcm2711
+
     Raspberry Pi 2 Model B Rev 1.1
+    raspberrypi,2-model-bbrcm,bcm2836
 
 # Modify raspberry pi hostname
 $ vim /etc/hostname
