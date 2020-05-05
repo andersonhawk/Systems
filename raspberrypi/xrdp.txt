@@ -1,0 +1,11 @@
+
+## use rdp to access raspberrypi desktop
+
+# systemctl stop vncserver-x11-serviced
+# systemctl disable vncserver-x11-serviced
+# apt-get purge realvnc-vnc-server realvnc-vnc-viewer
+
+## default setup/config xrdp (port 3389)
+# apt-get install xrdp
+
+## use rdp client tool connect raspberrypi
