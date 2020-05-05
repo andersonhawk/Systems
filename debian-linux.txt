@@ -181,7 +181,7 @@ iface wlan0 inet dhcp
 ## close terminal, vim remind voice
 
 # terminal, editor /etc/inputrc, comment out the LINE, and restart terminal
-	# set bell-style one
+	# set bell-style none
 
 # vim, editor ~/.vimrc, add following line in the configuration file
 	set vb t_vb=
