@@ -56,7 +56,9 @@ aptitude install -y vim vim-addon-manager vim-doc vim-python vim-youcompleteme
 aptitude install -y cscope ctags tmux
 
 # vnc, rdesktop
-aptitude install -y tightvncserver xtightvncviewer rdesktop
+aptitude install -y tightvncserver xtightvncviewer
+aptitude install -y vinagre
+aptitude install -y rdp rdesktop
 
 # browser, flash-plugin, ebook, misc
 aptitude install -y chromium chromium-l10n okular calibre qpdfview-djvu-plugin
