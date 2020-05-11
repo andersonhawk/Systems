@@ -1,0 +1,8 @@
+== build python3.8
+
+# a bunch of dependencies
+aptitude install libffi-dev
+
+./configure 
+make -j 4
+make install
