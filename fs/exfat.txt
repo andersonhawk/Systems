@@ -1,0 +1,11 @@
+## ubuntu 20.04 (kernel 5.4.x) with exfat filesystem
+
+# install exfat-utils, remove exfat-fuse
+apt-get install exfat-utils
+apt-get purge exfat-fuse
+
+modprobe exfat
+cat /proc/filesystem | grep exfat
+
+mount -t exfat /dev/sda5 /media/sda5
+
