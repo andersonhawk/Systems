@@ -2,10 +2,17 @@
 
 # install exfat-utils, remove exfat-fuse
 apt-get install exfat-utils
-apt-get purge exfat-fuse
+apt-get install exfat-fuse
 
 modprobe exfat
 cat /proc/filesystem | grep exfat
+
+# mount exfat with fuse 
+# modify default mount exfat with fuse (unlink /usr/sbin/mount.exfat -> mount.exfat-fuse)
+mount.exfat-fuse /dev/sdb1 /media/exfat
+
+# mount exfat with kernel exfat module
+mount -t exfat /dev/sdb1 /media/exfat
 
 # use exfat fs with non-root user
 
