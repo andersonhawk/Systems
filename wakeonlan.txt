@@ -1,0 +1,26 @@
+Target: 
+
+Dell9020 (BIOS setup):
+	Power Management
+		Deep Sleep Control: Disabled
+		USB Wake Support: Disabled
+		Wake on LAN: LAN Only
+
+Check System Network WOL Settings:
+
+	## disable network card wol
+	# ethtool -s em1 wol d
+
+	## enable network card wol (magic)
+	# ethtool -s em1 wol g
+
+	## check network card wol
+	# ethtool em1 | grep -e "Wake-on"
+
+
+Client:
+
+RaspberryPi4
+
+	# aptitude install etherwake
+	# etherwake <Target_MAC_Address>
