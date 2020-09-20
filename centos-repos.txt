@@ -1,0 +1,7 @@
+scl repo: newest gcc toolset setup
+----------------------------------
+
+# yum install -y centos-release-scl
+## modify scl repo about baseurl
+# yum install devtoolset-9-gcc devtoolset-9-gcc-c++ devtoolset-9-binutils devtoolset-9-binutils-devel
+# scl enable devtoolset-9 bash
