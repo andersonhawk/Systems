@@ -1,0 +1,11 @@
+## ubuntu mate desktop software ##
+
+Nemo -- files browsers
+
+Okular -- pdf browser
+Calibre -- epub browser
+Djview4 -- djvu browser
+
+Rhythmbox -- music player
+Smplayer -- view player
+
