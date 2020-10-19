@@ -9,10 +9,12 @@ $ rpm -qpl <package.rpm>
 $ yum install yum-utils
 $ repoquery -l <package>
 
-## centos with mate desktop
-# yum groupinstall "Development Tools"
-# yum groupinstall "Server with GUI"
-# yum groupinstall "MATE"
+## centos with mate desktop (add epel repos and modify /etc/yum.repos.d: CentOS-Base.repo, epel.repo)
+# yum clean all
+# yum makecache
+
+## yum groupinstall 
+# yum groupinstall "Development Tools" "Server with GUI" "MATE Desktop"
 
 ## change system startup with 'graphical' target
 # systemctl set-default graphical.target
