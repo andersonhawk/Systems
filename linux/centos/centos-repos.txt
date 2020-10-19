@@ -1,3 +1,9 @@
+baseos with epel
+----------------
+# yum clean all (after editor mirror in /etc/yum.repos.d/: CentOS-Base.repo, epel.repo)
+# yum makecache
+# yum groupinstall "Development Tools" "Server with GUI" "MATE Desktop"
+
 scl repo: newest gcc toolset setup
 ----------------------------------
 
