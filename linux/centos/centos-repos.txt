@@ -4,6 +4,11 @@ baseos with epel
 # yum makecache
 # yum groupinstall "Development Tools" "Server with GUI" "MATE Desktop"
 
+linux hardware tools
+# yum install lshw lshw-gui dmidecode python-dmidecode util-linux \
+	pciutils usbutils sg3_utils hdparm sdparm lsscsi nvme-cli nvmetcli smartmontools \
+	net-tools iproute iw bridge-utils ethtool python-ethtool python36-ethtool
+
 scl repo: newest gcc toolset setup
 ----------------------------------
 
