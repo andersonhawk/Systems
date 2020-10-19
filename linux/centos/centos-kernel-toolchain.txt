@@ -1,18 +1,8 @@
-baseos with epel
-----------------
-# yum clean all (after editor mirror in /etc/yum.repos.d/: CentOS-Base.repo, epel.repo)
-# yum makecache
-# yum groupinstall "Development Tools" "Server with GUI" "MATE Desktop"
-
-linux hardware tools
-# yum install lshw lshw-gui dmidecode python-dmidecode util-linux \
-	pciutils usbutils sg3_utils hdparm sdparm lsscsi nvme-cli nvmetcli smartmontools \
-	net-tools iproute iw bridge-utils ethtool python-ethtool python36-ethtool
-
-scl repo: newest gcc toolset setup
+latest gnu toolchains (gcc9): scl
 ----------------------------------
 
 # yum install -y centos-release-scl
 ## modify scl repo about baseurl
 # yum install devtoolset-9-toolchain
 # scl enable devtoolset-9 bash
+
