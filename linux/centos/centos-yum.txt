@@ -13,7 +13,7 @@ $ repoquery -l <package>
 # yum clean all
 # yum makecache
 
-## yum groupinstall 
+## yum desktop install ##
 # yum groupinstall "Development Tools" "Server with GUI" "MATE Desktop"
 
 ## change system startup with 'graphical' target
@@ -21,3 +21,8 @@ $ repoquery -l <package>
 ## check system default display-manager service
 # ls -l /etc/systemd/system/display-manager.service (lightdm.service)
 ## restart system and choose 'mate' desktop to login
+
+## centos hardware tools ##
+# yum install lshw lshw-gui dmidecode python-dmidecode util-linux \
+	pciutils usbutils sg3_utils hdparm sdparm lsscsi nvme-cli nvmetcli smartmontools \
+	net-tools iproute iw bridge-utils ethtool python-ethtool python36-ethtool
