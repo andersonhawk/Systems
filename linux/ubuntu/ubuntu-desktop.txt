@@ -2,10 +2,15 @@
 
 Nemo -- files browsers
 
+Remmina -- remote desktop
+
+qBittorrent -- download
+
 Okular -- pdf browser
 Calibre -- epub browser
 Djview4 -- djvu browser
 
 Rhythmbox -- music player
 Smplayer -- view player
+
 
