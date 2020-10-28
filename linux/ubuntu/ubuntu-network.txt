@@ -1,0 +1,16 @@
+dns configuration
+=================
+
+# check systemd-resolved.service status
+$ systemctl status systemd-resolved
+
+# check resolve.conf about dns configuration
+$ ls -l /etc/resolved.conf
+$ ls -l /etc/systemd/resolved.conf
+
+# add customized dns servers
+DNS=8.8.8.8
+DNS=4.4.4.4
+
+# systemd-resolve --status
+# systemctl restart systemd-resolved.service
