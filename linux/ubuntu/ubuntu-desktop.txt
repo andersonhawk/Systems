@@ -1,6 +1,10 @@
 ## ubuntu mate desktop software ##
 
-Nemo -- files browsers
+Fireforx -- web browser
+Chromium -- web browser
+Edge -- web browser
+
+Nemo -- files browser
 
 Remmina -- remote desktop
 
@@ -11,6 +15,6 @@ Calibre -- epub browser
 Djview4 -- djvu browser
 
 Rhythmbox -- music player
-Smplayer -- view player
-
+Smplayer -- video player
+vlc -- vido player
 
