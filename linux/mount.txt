@@ -1,0 +1,4 @@
+## mount usage
+## mount disk with user ownership and chinese support
+
+# mount -o iocharset=utf8,uid=1000,gid=1000 /dev/sdc1 /media/usb
