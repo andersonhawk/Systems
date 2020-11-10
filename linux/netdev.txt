@@ -4,7 +4,7 @@
 # GRUB_CMDLINE_LINUX="biosdevname=1 net.ifnames=1"
 
 ## Dell bios device name: biosdevname=1 ##
-
+------------------------------------------
 # embedded network interface (LOM)
 em[1234][new enumeration start at 1]
 # pci card network interface
@@ -13,7 +13,7 @@ p[slot]p[ethernet port][for example: p1p1]
 p[slot]p[ethernet port]_<numeric>[for example: p1p1_1]
 
 ## Net.ifnames: Predictable Network Names ##
-
+--------------------------------------------
 # Network Device
 en for Ethernet
 wl for wireless LAN (WLAN)
@@ -26,8 +26,16 @@ ps[f][u][..][i] usb port number chain
 ps[f][d] pci geographical location
 # for example: enp1s0 -> ethernet, pci bus 1, slot 0 #
 
-## Legacy network naming: ethx and with /etc/udev/rules.d/70-persistent-net.rules ##
+### Example legacy: eth0, eth1 ###
+----------------------------------
 # GRUB_CMDLINE_LINUX="biosdevname=0 net.ifnames=0"
 # /etc/udev/rules.d/70-persistent-net.rules
+# ACTION=="add", SUBSYSTEM=="net", DRIVERS=="e1000e", ATTR{type}=="32", ATTR{address}=="f8:b1:56:ad:c5:28", NAME="eth1"
 
-ACTION=="add", SUBSYSTEM=="net", DRIVERS=="e1000e", ATTR{type}=="32", ATTR{address}=="f8:b1:56:ad:c5:28", NAME="em1"
+### Example biosdevname=1 && net.ifnames=1: em1, p1p1 ###
+---------------------------------------------------------
+# GRUB_CMDLINE_LINUX="biosdevname=1 net.ifnames=1"
+
+### Example biosdevname=0 && net.ifnames=1: eno1, enp1s0 ###
+------------------------------------------------------------
+# GRUB_CMDLINE_LINUX="biosdevname=0 net.ifnames=1"
