@@ -1,0 +1,3 @@
+## create repos
+
+http://wiki.centos.org/zh/HowTos/CreatePublicMirrors
