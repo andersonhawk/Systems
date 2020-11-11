@@ -1,0 +1,48 @@
+### usage about mellanox connect-x driver/tools ###
+
+## CentOS ##
+------------
+1. setup scl-repo for latest toolchain, modify mirror url
+
+# yum install centos-release-scl-rh centos-release-scl
+# yum install devtoolset-9-xx (gcc, gcc-c++, elfutils etc)
+# scl -l
+# scl enable devtoolset-9 /bin/bash
+# gcc -v
+
+2. build LTS updated linux kernel (4.19.x): allmodconfig with networking features.
+# yum defconfig
+
+3. install LTS kernel and kernel headers
+# make modules_install
+# make install
+# make headers_install (cp /usr/include /usr/include.orig, replace kernel header files in /usr/include)
+
+3. build mellanox kernel drivers (ethernet, rdma)
+# scl -l
+# scl enable devtoolset-9 /bin/bash
+# gcc -v
+
+# pushd src (build directory: /var/tmp/OFED_topdir)
+# ./install.pl -b --kernel-only
+# rpm -i kernel-mft mlnx-nvme mlnx-ofa_kernel mlnx_ofa-modules ofed-scripts
+
+4. install rdma libraries and tools
+# mount -o loop mellanox.iso /media/iso
+# pushd /media/iso/
+# rpm --import RPM-GPG-KEY-Mellanox
+
+## create mellanox local repository with iso
+# vim /etc/yum.repos.d/mellanox.repo
+[mellanox-local]
+name=Mellanox driver/tools repository
+baseurl=file:///media/iso/RPMS
+enabled=1
+
+# yum makecache; yum repolist
+
+## install rdma libraries and tools in mellanox-local repos
+# yum --disablerepo=base --disablerepo=updates install 
+	mft mstflint mlnx-ethtool mlnx-iproute2 \
+	rdma-core rdma-core-devel \
+	libibverbs libibverbs-utils librdmacm librdmacm-utils
