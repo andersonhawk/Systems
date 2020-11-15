@@ -9,7 +9,13 @@ https://github.com/xiaoshoudian/xiazai
 3. config ip_forwarding and iptables nat masq with wireless ap.
 4. start, stop beam with root user, and them modify proxy ip address.
 	/root/.beam/settings.yaml: modify addr, socksAddr with 
-	real ip address on ethernet interface.
+	real ip addr on ethernet hardware: 192.168.88.92:40415
 5. start beam with root user.
-6. android TV/phone connect wifi with beam proxy setting.
-	advanced setting with wifi configuration.
+6. config ubuntu linux proxy with beam proxy config.
+	http_proxy=http://192.168.88.92:40415
+	https_proxy=http://192.168.88.92:40415
+	all_proxy=http://192.168.88.92:40415
+	no_proxy="127.0.0.1,::1"
+
+7. android TV/phone connect ubuntu linux wifi with proxy setting.
+	advanced wifi configuration filled with proxy information.
