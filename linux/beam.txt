@@ -1,0 +1,15 @@
+### lantern/beam configuration ###
+
+https://github.com/getlantern/lantern
+
+https://github.com/xiaoshoudian/xiazai
+
+1. install beam on ubuntu linux 
+2. config ubuntu as hostapd && dhcp-server, config and start services.
+3. config ip_forwarding and iptables nat masq with wireless ap.
+4. start, stop beam with root user, and them modify proxy ip address.
+	/root/.beam/settings.yaml: modify addr, socksAddr with 
+	real ip address on ethernet interface.
+5. start beam with root user.
+6. android TV/phone connect wifi with beam proxy setting.
+	advanced setting with wifi configuration.
