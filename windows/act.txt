@@ -1,0 +1,12 @@
+## link: https://www.win10gw.com/win10wenzhang/3571.html
+## create a bat file for activation.
+## act.bat
+
+slmgr /ipk <sn>
+slmgr /skms kms.03k.org
+slmgr /ato
+
+## exec the act.bat with administrator
+windows 10: cn_windows_10_business_edition_version_1809_updated_sept_2018_x64_dvd_84ac403f.iso
+Professional : W269N-WFGWX-YVC9B-4J6C9-T83GX
+Enterprise   : NPPR9-FWDCX-D2C8J-H872K-2YT43
