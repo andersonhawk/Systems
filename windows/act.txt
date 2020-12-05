@@ -2,6 +2,9 @@
 ## create a bat file for activation.
 ## act.bat
 
+## remove keys
+# slmgr /upk
+
 ## kms useful server
 kms.eallion.com
 
