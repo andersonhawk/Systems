@@ -2,6 +2,9 @@
 ## create a bat file for activation.
 ## act.bat
 
+## kms useful server
+kms.eallion.com
+
 slmgr /ipk <sn>
 slmgr /skms kms.03k.org
 slmgr /ato
