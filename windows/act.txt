@@ -32,7 +32,7 @@ cscript ospp.vbs /act
 
 
 ## visio 2019
-## check and convert visio 2019 version retail to vol (tool to convert)
+## check and convert visio 2019 version retail to vol (tool: office2019lsbzvolgj.rar)
 ## key: 9BGNQ-K37YR-RQHF2-38RQ3-7VCBB
 ## c:\Program Files (x86)\Microsoft Office\Office16
 
