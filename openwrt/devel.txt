@@ -1,0 +1,13 @@
+
+## openwrt image build
+https://openwrt.org/docs/guide-developer/quickstart-build-images
+----
+
+## host dependencies
+# aptitude install libncurses-dev gawk gawk-doc
+
+## sync repository
+# https://openwrt.org/docs/guide-developer/quickstart-build-images
+# cd openwrt
+# ./scripts/feeds update -a
+# ./scripts/feeds install -a
