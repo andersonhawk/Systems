@@ -1,0 +1,12 @@
+
+Windows use sshfs to attach linux remote storage directory
+
+sshfs-win
+https://github.com/billziss-gh/sshfs-win
+
+winfsp
+https://github.com/billziss-gh/winfsp
+
+## map network storage ##
+
+\\sshfs.r\root@192.168.1.1\media
