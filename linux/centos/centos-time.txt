@@ -1,0 +1,13 @@
+## modify system timezone 
+
+# ln -s /usr/share/zoneinfo/UTC /etc/localtime
+# ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+## modify system time setting
+
+# timedatectl set-time '2021-01-21 16:13:00'
+
+## get system localtime and utc time
+
+# timedatectl (zone, time setting)
+# timedatectl list-timezones
