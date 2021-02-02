@@ -1,0 +1,16 @@
+## package install usb storage system ##
+## https://openwrt.org/docs/guide-user/storage/usb-installing
+
+# opkg update
+
+## usb
+# opkg install kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-usb-storage usbutils
+
+## block device
+# opkg install mount-utils fdisk lsblk
+
+## file system
+# opkg install kmod-fs-exfat kmod-fs-vfat
+
+## fuse
+# opkg install kmod-fuse libfuse-utils sshfs
