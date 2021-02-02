@@ -1,0 +1,12 @@
+## RPi4 usb boot ##
+https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb
+
+## update raspbian system image
+# apt update
+# apt full-upgrade
+# rpi-update
+
+## update boot rom
+rpi-eeprom-update -d -a
+
+## raspi-config (bootloader version, boot method in advance)
