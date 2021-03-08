@@ -1,0 +1,4 @@
+## issue no detect U.2 convert to pciex4
+
+modify bios setting:
+	video card : no auto, with embedded video displayer.
