@@ -13,6 +13,12 @@ qBittorrent -- download
 Okular -- pdf browser
 Calibre -- epub browser
 Djview4 -- djvu browser
+foliate -- epub reader
+
+## foliate installer
+# add-apt-repository ppa:apandada1/foliate
+# apt install foliate
+
 
 Rhythmbox -- music player
 Smplayer -- video player
