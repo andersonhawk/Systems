@@ -1,0 +1,35 @@
+## install cuda in ubuntu linux
+
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+https://zhuanlan.zhihu.com/p/79059379
+
+https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu2004/x86_64/
+
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=deblocal
+
+## dependencies install
+# apt install libglu1-mesa libxi-dev libxmu-dev libglu1-mesa-dev freeglut3-dev
+
+## disable nouveau and install nvidia device driver 
+
+# touch /etc/modprobe.d/nvidia-installer-disable-nouveau.conf
+
+blacklist nouveau
+options nouveau modeset=0
+
+# update-initramfs -u
+# systemctl set-default multi-user
+# reboot
+
+# ./NVIDIA-Linux-x86_64-418.113.run
+# systemctl set-default graphical
+# reboot
+
+# cuda install
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda-repo-ubuntu2004-11-2-local_11.2.2-460.32.03-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2004-11-2-local_11.2.2-460.32.03-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu2004-11-2-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
