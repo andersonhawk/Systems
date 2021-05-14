@@ -1,0 +1,20 @@
+vmware workstation download:
+============================
+https://softwareupdate.vmware.com/cds/vmw-desktop
+
+
+vmware workstation support guest macOS:
+https://github.com/paolo-projects/unlocker
+
+vmware fusion guest enhancement directory:
+/payload/VMware Fusion.app/Contents/Library/isoimages
+
+Install macOS big sur 11.2.3 with vmware workstation
+----------------------------------------------------
+1.config vm harddisk with nvme protocol
+2.install macOS to disk
+3.load darwin.iso to macOS
+4.enable 'App store and developer' option in preference/security
+  optional total disable app from:
+  # sudo spctl --master-disable
+5.install vmware tools for macOS and reboot
