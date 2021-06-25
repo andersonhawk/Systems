@@ -5,6 +5,7 @@ Chromium -- web browser
 Edge -- web browser
 
 Nemo -- files browser
+gThumb -- picture browser
 
 Remmina -- remote desktop
 
