@@ -1,10 +1,12 @@
 
 ## install language
-Menu->Preferences->Language Support, Install chinese language support (fcitx input method)
+Menu->Preferences->Language Support, Install chinese language support 
+Keyboard input method system: fcitx
 
 ## install fcitx configure tool
-
 # apt install fcitx-config-gtk fcitx-config-common
+
+## logout, login system
 
 ## config fcitx
 Menu->Preferences->fcitx configuration: add pinyin, sunpinyin etc.
