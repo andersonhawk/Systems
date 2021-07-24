@@ -20,8 +20,10 @@ foliate -- epub reader
 # add-apt-repository ppa:apandada1/foliate
 # apt install foliate
 
-
-Rhythmbox -- music player
+# rhythmox chinese support
+# apt install python-mutagen
+# mid3icon -e GBK *.mp3, and restart rhythmox
+Rhythmbox -- music player 
 Smplayer -- video player
 vlc -- vido player
 
