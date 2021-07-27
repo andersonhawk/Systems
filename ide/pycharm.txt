@@ -1,0 +1,30 @@
+## install jdk and graphic library in ubuntu system
+$ apt install openjdk-11-jre python3-tk
+
+## config pycharm with jetbrains-agent
+
+## extract and run pycharm with evaulation mode
+$ tar xzf pycharm-professional-2020.1.tar.gz
+$ cd pycharm-2020.1/bin && ./pycharm.sh
+
+## activate: drog the jetbrains-agent.jar into ide and restart ide
+
+## pip install modules with ide environments
+
+$ pip install numpy matplotlib
+
+## simple demo code support chinese title
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+mpl.use("TkAgg")
+
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
+
+
+## fix pycharm chould not show graphic picture
+
+File->Settings->Tools->Python Scientific,
+	Cancel select 'Show plots in tool windows'
