@@ -1,0 +1,6 @@
+## xrandr configuration
+
+# xrandr -q
+
+## brightness configuration
+# xrandr --output DP-2 --brightness 1
